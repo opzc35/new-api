@@ -24,6 +24,7 @@ import (
 	"one-api/relay/channel/openai"
 	"one-api/relay/channel/palm"
 	"one-api/relay/channel/perplexity"
+	"one-api/relay/channel/replicate"
 	"one-api/relay/channel/siliconflow"
 	"one-api/relay/channel/submodel"
 	taskdoubao "one-api/relay/channel/task/doubao"
@@ -96,6 +97,8 @@ func GetAdaptor(apiType int) channel.Adaptor {
 		return &openai.Adaptor{}
 	case constant.APITypeXinference:
 		return &openai.Adaptor{}
+	case constant.APITypeReplicate:
+		return &replicate.Adaptor{}
 	case constant.APITypeXai:
 		return &xai.Adaptor{}
 	case constant.APITypeCoze:

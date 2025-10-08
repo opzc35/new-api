@@ -169,6 +169,11 @@ export const CHANNEL_OPTIONS = [
     color: 'blue',
     label: '豆包视频',
   },
+  {
+    value: 55,
+    color: 'blue',
+    label: 'Replicate',
+  },
 ];
 
 export const MODEL_TABLE_PAGE_SIZE = 10;
