@@ -151,6 +151,8 @@ func Redeem(key string, userId int) (quota int, err error) {
 		return 0, errors.New("兑换失败，" + err.Error())
 	}
 	RecordLog(userId, LogTypeTopup, fmt.Sprintf("通过兑换码充值 %s，兑换码ID %d", logger.LogQuota(redemption.Quota), redemption.Id))
+	UpgradeUserGroup(userId, "vip")
+	RecordLog(userId, LogTypeTopup, fmt.Sprintf("兑换码充值后升级为vip，兑换码ID %d", redemption.Id))
 	return redemption.Quota, nil
 }
 
