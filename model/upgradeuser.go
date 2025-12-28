@@ -1,6 +1,6 @@
 //升级用户等级
 
-package model
+package model;
 
 import (
     "github.com/QuantumNous/new-api/common"
